@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<span th:text="'Hello, ' + ${message} + ' ' + ${x}"></span>
+	<ul>
+		<li th:each="task : ${tasks}" th:text="${task}"></li>
+	</ul>
+</body>
+</html>

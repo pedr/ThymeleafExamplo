@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- Submit. Precisa mandar um objeto pelo model que está em WelcomeController.java
+		o objeto que eu mandei é o project ali, Spring deve procurar a classe e automaticamente
+		usar os setters pra colocar valor no objeto -->
+	<form method="POST" action="#" th:action="@{/product}" th:object="${product}">
+		<label>Nome <input type="text" th:field="*{name}"> </label> 
+		<br><br>
+		<label>Preço <input type="text" th:field="*{price}"> </label> 
+		<br><br>
+		<button type="submit">Send</button>
+	</form>
+	
+	<h3>Produtos adicionados:</h3>
+	<!-- Mostra as paradas -->	
+	<ul>
+		<li th:each="p : ${products}"
+		th:text="'Nome: ' + ${p.name} 
+		+ ' - Preço: ' +  ${p.price}"></li>
+	</ul>
+
+
+</body>
+</html>
